@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <mat-icon>newspaper</mat-icon>
+      <a mat-button routerLink="/home">Home</a>
+      <a mat-button routerLink="/news">News</a>
+      <span class="example-spacer"></span>
+
+
+      <ng-container  *ngIf="!ls.UserLogin">   
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/login">
+        <mat-icon>login</mat-icon>
+       </button>
+      </ng-container>
+
+   <ng-container *ngIf="ls.UserLogin">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"(click)="logout()">
+    <mat-icon>logout</mat-icon>
+ 
+  </button>
+  </ng-container>
+
+
+    </mat-toolbar-row>
+</mat-toolbar>

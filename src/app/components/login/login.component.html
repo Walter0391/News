@@ -1,0 +1,25 @@
+<div class="center-screen">  
+    <form #theForm="ngForm" class="auth" (ngSubmit)="login()">
+        <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input #emailInput="ngModel"
+         matInput type="text" name="email" [(ngModel)]="loginDto.email" placeholder="E-mail... " 
+        required
+         pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" >
+        </mat-form-field>
+        <mat-error *ngIf="emailInput.hasError('required')  && emailInput.touched">Email obbligatoria</mat-error>
+        <mat-error *ngIf="emailInput.hasError('pattern') && emailInput.touched">Email non valida</mat-error>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input  #passwordInput="ngModel" matInput  type="password" name="passwod" [(ngModel)]="loginDto.password" placeholder="Password..."
+            required>
+            <mat-error *ngIf="passwordInput.hasError('required')  && passwordInput.touched">Password obbligatoria</mat-error>
+    
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [disabled]="theForm.form.invalid">Login</button>
+    </form>
+    <pre>
+        {{loginDto | json}}
+    </pre>
+    </div>

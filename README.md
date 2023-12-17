@@ -1,27 +1,24 @@
-# News
+Scrivere un’applicazione che recuperi le news dal servizio https://newsapi.org/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+per utilizzare il servizio è necessario iscriversi e recuperare un api key = e5a7438bfed245cc82f855598f706adb
 
-## Development server
+Tra le opzioni disponibili di autenticazione del servizio utilizzare quella che prevede di passare
+l’api key nell’header authorization
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+L’applicazione dovra avere le seguenti rotte:
 
-## Code scaffolding
+/home => pagina di presentazione dell'applicazione
+/news => pagina con la lista delle news recuperate da https://newsapi.org/
+/login => pagina con form di Login
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+La rotta news dovrà essere visibile solo agli utenti loggati attraverso una Guard che controlla che esista nel localStorage un utente loggato.
 
-## Build
+Il login è da effettuare utilizzando json-server come fatto in classe. In questo caso il token del json-server non serve a niente.
+Fate solo il login per salvare l'utente nel localStorage e fare in modo che la Guard di Angular di cui sopra funzioni. NON HO CAPITO UN CAZZO
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Il servizio che recupera le news deve essere fatto in modo che accetti un termine di ricerca con il quale fare una query su https://newsapi.org/
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Nel componente che visualizza le news prevedere una casella di testo dove inserire il termine di ricerca per poi passarlo al servizio di cui sopra
+News API
+News API – Search News and Blog Articles on the Web
+Get JSON search results for global news articles in real-time with our free News API.
