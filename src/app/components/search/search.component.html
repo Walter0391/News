@@ -1,0 +1,10 @@
+
+<ng-container  *ngIf="ss.UserLogin">   
+<form
+  #theForm="ngForm"
+  color="primary"
+  (ngSubmit)="cerca()">
+  <input type="text" placeholder="cerca..." />
+  <button  color="primary" type="submit">cerca</button>
+</form>
+</ng-container>

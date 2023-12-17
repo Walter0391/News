@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     NewsComponent,
     MenuComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

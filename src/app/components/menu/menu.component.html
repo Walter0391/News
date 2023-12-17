@@ -7,12 +7,14 @@
 
 
       <ng-container  *ngIf="!ls.UserLogin">   
+        <p>Login</p>
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/login">
         <mat-icon>login</mat-icon>
        </button>
       </ng-container>
 
    <ng-container *ngIf="ls.UserLogin">
+    <p>Logout</p>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"(click)="logout()">
     <mat-icon>logout</mat-icon>
  

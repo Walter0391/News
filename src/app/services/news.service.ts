@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SearchResponse } from '../models/news.model';
+import { Root } from '../models/news.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -16,9 +16,9 @@ export class NewsService {
     }),
   };
 
-  search(): Observable<SearchResponse> {
-    return this.http.get<SearchResponse>(
-      `${environment.NEWS_API_BASE_URL}/top-headlines/sources`,
+  search(): Observable<Root> {
+    return this.http.get<Root>(
+      `${environment.NEWS_API_BASE_URL}/everything?q=italia`,
       this.httpOptions
     );
   }

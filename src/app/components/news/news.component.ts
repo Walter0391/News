@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NewNewsDto, News, SearchResponse } from 'src/app/models/news.model';
+import { Article, NewNewsDto } from 'src/app/models/news.model';
 import { LoginService } from 'src/app/services/login.service';
 import { NewsService } from 'src/app/services/news.service';
 import { environment } from 'src/environments/environment';
@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class NewsComponent implements OnInit {
   model?: NewNewsDto;
-  notizie: News[] = [];
+  notizie: Article[] = [];
 
   constructor(
     public ns: NewsService,
@@ -30,7 +30,7 @@ export class NewsComponent implements OnInit {
     if (this.ls.getLogUser() != null) {
       this.model = new NewNewsDto(this.ls.getLogUser()!.user.id);
 
-      this.ns.search().subscribe((dati) => (this.notizie = dati.sources));
+      this.ns.search().subscribe((dati) => (this.notizie = dati.articles));
     }
   }
 

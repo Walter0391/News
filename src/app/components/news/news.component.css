@@ -3,4 +3,10 @@
     margin: 20px auto ;
     border: black solid 1px;
   }
+
+  .mdc-card__media  {
+   width: 100%;
+  }
+
+  
   
